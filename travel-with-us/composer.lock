@@ -1,0 +1,66 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "d84a9651f3839e2272440215c1281402",
+    "content-hash": "4c2bfc7e52352949a0256652b7285614",
+    "packages": [
+        {
+            "name": "miladrahimi/phprouter",
+            "version": "2.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/miladrahimi/phprouter.git",
+                "reference": "336fd4825a673a4727174fc92d4b8cd8231df381"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/miladrahimi/phprouter/zipball/336fd4825a673a4727174fc92d4b8cd8231df381",
+                "reference": "336fd4825a673a4727174fc92d4b8cd8231df381",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MiladRahimi\\": "src/MiladRahimi/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milad Rahimi",
+                    "email": "info@miladrahimi.com",
+                    "homepage": "http://miladrahimi.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Free PHP URL router for neat and powerful projects!",
+            "homepage": "http://miladrahimi.github.io/phprouter",
+            "keywords": [
+                "URL Router",
+                "URL Routing",
+                "route",
+                "router",
+                "routing",
+                "url"
+            ],
+            "time": "2016-08-17 13:13:33"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
