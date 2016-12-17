@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d84a9651f3839e2272440215c1281402",
-    "content-hash": "4c2bfc7e52352949a0256652b7285614",
+    "hash": "3e390c8ebec8d41bad44791e9e52a4ae",
+    "content-hash": "7b6809c9fa4387ef7e1a8766abbb69ea",
     "packages": [
         {
             "name": "miladrahimi/phprouter",
@@ -53,6 +53,51 @@
                 "url"
             ],
             "time": "2016-08-17 13:13:33"
+        },
+        {
+            "name": "miladrahimi/phptemplate",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/miladrahimi/phptemplate.git",
+                "reference": "6e134eb9609dd1146a5f6b8329e799eb0e336f43"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/miladrahimi/phptemplate/zipball/6e134eb9609dd1146a5f6b8329e799eb0e336f43",
+                "reference": "6e134eb9609dd1146a5f6b8329e799eb0e336f43",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MiladRahimi\\": "src/MiladRahimi/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milad Rahimi",
+                    "email": "info@miladrahimi.com",
+                    "homepage": "http://miladrahimi.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Free PHP template engine for neat and powerful projects!",
+            "homepage": "http://github.com/miladrahimi/phptemplate",
+            "keywords": [
+                "engine",
+                "template",
+                "template engine",
+                "view"
+            ],
+            "time": "2015-07-31 18:28:54"
         }
     ],
     "packages-dev": [],

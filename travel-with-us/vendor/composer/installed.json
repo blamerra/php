@@ -47,5 +47,52 @@
             "routing",
             "url"
         ]
+    },
+    {
+        "name": "miladrahimi/phptemplate",
+        "version": "1.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/miladrahimi/phptemplate.git",
+            "reference": "6e134eb9609dd1146a5f6b8329e799eb0e336f43"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/miladrahimi/phptemplate/zipball/6e134eb9609dd1146a5f6b8329e799eb0e336f43",
+            "reference": "6e134eb9609dd1146a5f6b8329e799eb0e336f43",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2015-07-31 18:28:54",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MiladRahimi\\": "src/MiladRahimi/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Milad Rahimi",
+                "email": "info@miladrahimi.com",
+                "homepage": "http://miladrahimi.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "Free PHP template engine for neat and powerful projects!",
+        "homepage": "http://github.com/miladrahimi/phptemplate",
+        "keywords": [
+            "engine",
+            "template",
+            "template engine",
+            "view"
+        ]
     }
 ]

@@ -17,6 +17,7 @@ class ComposerStaticInit11f520ea1143eecb03d3dd558ceb75a7
         'MiladRahimi\\' => 
         array (
             0 => __DIR__ . '/..' . '/miladrahimi/phprouter/src/MiladRahimi',
+            1 => __DIR__ . '/..' . '/miladrahimi/phptemplate/src/MiladRahimi',
         ),
     );
 

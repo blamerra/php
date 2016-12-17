@@ -1,5 +1,6 @@
 {
     "require": {
-        "miladrahimi/phprouter": "^2.3"
+        "miladrahimi/phprouter": "^2.3",
+        "miladrahimi/phptemplate": "^1.0"
     }
 }

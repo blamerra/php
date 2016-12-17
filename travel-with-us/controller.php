@@ -1,15 +1,39 @@
 <?php  
+
+use MiladRahimi\PHPTemplate\TemplateEngineFactory;
+
 class Controller
 {
+		var $templateEngine;
+		
+		function __construct() {		
+			$this->templateEngine = TemplateEngineFactory::create();
+			$this->templateEngine->setBaseDirectory("views");
+		}		
+
+
     function home()
     {
-        return "This is the Home Page";
+				$data = array(
+				    "name"     => "Bon",
+				    "surname"  => "Jovi"
+				);
+
+				echo $this->templateEngine->render("header.html", $data);
+				echo $this->templateEngine->render("home.html", $data);
+				echo $this->templateEngine->render("footer.html", $data);
     }
 
 
     function travel($id)
     {
-        return "This is detail for travel: ".$id;
+ 				$data = array(
+				    "travelId" => $id				  
+				);
+
+				echo $this->templateEngine->render("header.html", $data);
+				echo $this->templateEngine->render("travel.html", $data);        
+				echo $this->templateEngine->render("footer.html", $data);				
     }
 }
 

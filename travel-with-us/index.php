@@ -1,6 +1,6 @@
  <?php  
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '\controller.php';
+require __DIR__ . '/controller.php';
 
 
  // Use this namespace
@@ -15,10 +15,8 @@ try{
 	// Home page
 	$router->get("/php/travel-with-us/", "Controller@home"); 
 
-
 	// Travel detail page
 	$router->get("/php/travel-with-us/travel/{id}", "Controller@travel");
-
 
 	// Dispatch all matched routes and run!
 	$router->dispatch();
