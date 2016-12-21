@@ -20,7 +20,10 @@ class Controller
 				);
 
 				echo $this->templateEngine->render("header.html", $data);
-				echo $this->templateEngine->render("home.html", $data);
+				echo $this->templateEngine->render("menu.html", $data);				
+				echo $this->templateEngine->render("banner.html", $data);
+				echo $this->templateEngine->render("last_travel.html", $data);				
+				echo $this->templateEngine->render("timeline.html", $data);								
 				echo $this->templateEngine->render("footer.html", $data);
     }
 
