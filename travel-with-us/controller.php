@@ -30,14 +30,41 @@ class Controller
 
     function travel($id)
     {
+
+
+				//echo $this->templateEngine->render("header_travel.html", $data);
+				//echo $this->templateEngine->render("travel.html", $data);        
+				//echo $this->templateEngine->render("footer.html", $data);				
+		
+			$img_list=array();
+			for ($img_id = 100; $img_id < 135; $img_id++){
+
+				array_push($img_list, $img_id);	
+			}
+
+
+
+
  				$data = array(
-				    "travelId" => $id				  
+				    "travelId" => $id,				  
+						"xxximages"  => array("colombia-100", "colombia-101", "colombia-102"),
+						"images" => $img_list
 				);
 
-				echo $this->templateEngine->render("header.html", $data);
-				echo $this->templateEngine->render("travel.html", $data);        
-				echo $this->templateEngine->render("footer.html", $data);				
+				echo $this->templateEngine->render("tiles_nested.html", $data);				
     }
+
+    function test($id)    {
+
+			$data = array(
+		    "name"    => "David",
+		    "surname" => "Gilmour",
+		    "genres"  => array("Progressive Rock", "Art Rock", "Blues Rock"),
+		    "images"  => array("colombia-100", "colombia-101", "colombia-102")
+				);    
+
+			echo $this->templateEngine->render("singer.html", $data);
+		}
 }
 
 ?>

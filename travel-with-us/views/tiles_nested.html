@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Unite Gallery - Tiles - Nested</title>
+
+	<script type='text/javascript' src='http://localhost/php/travel-with-us/vendor/unitegallery/js/jquery-11.0.min.js'></script>	
+	<script type='text/javascript' src='http://localhost/php/travel-with-us/vendor/unitegallery/js/unitegallery.min.js'></script>	
+
+	<link rel='stylesheet' href='http://localhost/php/travel-with-us/vendor/unitegallery/css/unite-gallery.css' type='text/css' />
+	
+	<script type='text/javascript' src='http://localhost/php/travel-with-us/vendor/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
+	
+	
+</head>
+
+<body>
+	
+	<h2>Tiles - Nested</h2>
+
+	<h1>Travel Detail : {travelId}</h1>
+			
+	<div id="gallery" style="display:none; width: 80%">
+		<images value="item">
+					<a href="http://unitegallery.net">
+					<img alt="Woman"
+					     src="../img_gallery/colombia/thumbs/colombia-{item}.jpg"
+					     data-image="../img_gallery/colombia/colombia-{item}.jpg"
+					     data-description="This is a woman"
+					     style="display:none">
+					</a>
+		</images>
+	</div>
+	
+	<script type="text/javascript">
+
+		jQuery(document).ready(function(){
+
+			jQuery("#gallery").unitegallery({
+				tiles_type:"nested"
+			});
+
+		});
+		
+	</script>
+
+
+</body>
+</html>

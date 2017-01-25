@@ -18,6 +18,9 @@ try{
 	// Travel detail page
 	$router->get("/php/travel-with-us/travel/{id}", "Controller@travel");
 
+	//test
+	$router->get("/php/travel-with-us/test/{id}", "Controller@test");
+
 	// Dispatch all matched routes and run!
 	$router->dispatch();
 }
