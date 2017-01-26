@@ -51,7 +51,16 @@ class Controller
 						"images" => $img_list
 				);
 
-				echo $this->templateEngine->render("tiles_nested.html", $data);				
+				echo $this->templateEngine->render("bootstrap-navbar-fixed-top.html", $data);		
+/*
+				echo $this->templateEngine->render("header_travel.html", $data);
+				echo $this->templateEngine->render("menu_travel.html", $data);		
+				echo $this->templateEngine->render("tiles_nested.html", $data);			
+*/
+			
+
+				//echo $this->templateEngine->render("travel.html", $data);        
+				//echo $this->templateEngine->render("footer.html", $data);				
     }
 
     function test($id)    {
