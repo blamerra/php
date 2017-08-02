@@ -1,0 +1,5 @@
+projectKey=travel:with:us
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/travel:with:us
+ceTaskId=AVoRJoyfRp9DfafyQAAX
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVoRJoyfRp9DfafyQAAX
