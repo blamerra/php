@@ -1,25 +1,35 @@
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 
+<!-- js -->
+<!-- start-smooth-scrolling -->
+<script type="text/javascript" src="http://localhost/php/travel-with-us/js/move-top.js"></script>
+<script type="text/javascript" src="http://localhost/php/travel-with-us/js/easing.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smooth-scrolling -->
+<link rel="stylesheet" href="http://localhost/php/travel-with-us/css/swipebox.css">
+				<script src="http://localhost/php/travel-with-us/js/jquery.swipebox.min.js"></script> 
+					<script type="text/javascript">
+						jQuery(function($) {
+							$(".swipebox").swipebox();
+						});
+					</script>
 
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {								
+			$().UItoTop({ easingType: 'easeOutQuart' });							
+			});
+	</script>
+<!-- //here ends scrolling icon -->
 
-<!--
-<div id="loader-wrapper">
-<div id="loader"></div>
-
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-
-</div>
--->
-<!-- <<Attched Javascripts>> -->
-<!--
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
--->
- 
-<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/jquery.sudoSlider.min.js"></script>
-<script type="text/javascript" src="js/global.js"></script>
-<script type="text/javascript" src="js/modernizr.js"></script>
+<script type="text/javascript" src="http://localhost/php/travel-with-us/js/bootstrap-3.1.1.min.js"></script>
 
 
 </body>
