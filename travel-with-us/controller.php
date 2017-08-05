@@ -1,89 +1,68 @@
 <?php  
 
-use MiladRahimi\PHPTemplate\TemplateEngineFactory;
+use Models\Travel;
+use Models\TravelList;
+use Models\Continent;
+use Models\ContinentList;
 
+//here ItemType is encapsulated into an object
+/*
+$GLOBALS['travels'] = array(
+  0 => new Travel('cuba', 'Cuba', 'sud-america','2016','11','72157686736328755'),
+  1 => new Travel('japo', 'Japo', 'asia','2016','08','72157686736328755')
+);
+*/
 class Controller
-{
-		var $templateEngine;
+{		
+		var $view;
+		var $travelList;
+		var $continentList;
 		
 		function __construct() {		
-			$this->templateEngine = TemplateEngineFactory::create();
-			$this->templateEngine->setBaseDirectory("views");
+			$this->view = new View();
+			$this->travelList = new TravelList();
+			$this->continentList = new ContinentList();			
 		}		
 
 
     function home()
     {
-				$data = array(
-				    "name"     => "Bon",
-				    "surname"  => "Jovi"
-				);
+			$this->view->ShowHeader($this->continentList, $this->travelList);	
+			$this->view->ShowFooter();						
 
-				echo $this->templateEngine->render("header.html", $data);
-				echo $this->templateEngine->render("menu.html", $data);				
-				echo $this->templateEngine->render("banner.html", $data);
-				echo $this->templateEngine->render("last_travel.html", $data);				
-				echo $this->templateEngine->render("timeline.html", $data);								
-				echo $this->templateEngine->render("footer.html", $data);
+/*		
+			foreach ($this->travelList->findAll() as $item) {
+    		echo $item->name;
+    		echo '<br>';
+			}
+
+			echo 'xxxx<br>';
+
+			foreach ($this->continentList->findAll() as $item) {
+    		echo $item->name;
+    		echo '<br>';
+			}
+			
+			echo 'xxxx<br>';
+			foreach ($this->travelList->findByContinent('asia') as $item) {
+    		echo $item->name;
+    		echo '<br>';
+			}
+
+			//echo $this->templateEngine->render("banner.html", $data);
+			//echo $this->templateEngine->render("last_travel.html", $data);				
+			//echo $this->templateEngine->render("timeline.html", $data);		
+			*/						
+
     }
 
     function travel($id)
-    {
-			$data = array(
-			  "travelId" => $id,				  
-			);
-			echo $this->templateEngine->render("header.html", $data);
-			echo $this->templateEngine->render("menu.html", $data);       
-			echo $this->templateEngine->render("travel.html", $data);        
-			echo $this->templateEngine->render("footer.html", $data);							
+    {			
+			$this->view->ShowHeader();				   
+			$this->view->ShowTravel($id);
+			//echo $this->templateEngine->render("travel.html", $data);        
+			$this->view->ShowFooter();								
     }
-
-    function travel_3($id)
-    {
-
-
-				//echo $this->templateEngine->render("header_travel.html", $data);
-				//echo $this->templateEngine->render("travel.html", $data);        
-				//echo $this->templateEngine->render("footer.html", $data);				
-		
-			$img_list=array();
-			for ($img_id = 100; $img_id < 135; $img_id++){
-
-				array_push($img_list, $img_id);	
-			}
-
-
-
-
- 				$data = array(
-				    "travelId" => $id,				  
-						"xxximages"  => array("colombia-100", "colombia-101", "colombia-102"),
-						"images" => $img_list
-				);
-
-				echo $this->templateEngine->render("bootstrap-navbar-fixed-top.html", $data);		
-/*
-				echo $this->templateEngine->render("header_travel.html", $data);
-				echo $this->templateEngine->render("menu_travel.html", $data);		
-				echo $this->templateEngine->render("tiles_nested.html", $data);			
-*/
-			
-
-				//echo $this->templateEngine->render("travel.html", $data);        
-				//echo $this->templateEngine->render("footer.html", $data);				
-    }
-
-    function test($id)    {
-
-			$data = array(
-		    "name"    => "David",
-		    "surname" => "Gilmour",
-		    "genres"  => array("Progressive Rock", "Art Rock", "Blues Rock"),
-		    "images"  => array("colombia-100", "colombia-101", "colombia-102")
-				);    
-
-			echo $this->templateEngine->render("singer.html", $data);
-		}
 }
 
 ?>

@@ -1,11 +1,11 @@
  <?php  
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/controller.php';
-
+require __DIR__ . '/view.php';
+require __DIR__ . '/model.php';
 
  // Use this namespace
 use MiladRahimi\PHPRouter\Router;
-
 
 
 try{
@@ -20,6 +20,8 @@ try{
 
 	//test
 	$router->get("/php/travel-with-us/test/{id}", "Controller@test");
+
+	$router->get("/php/travel-with-us/test2/{id}", "Controller@test2");
 
 	// Dispatch all matched routes and run!
 	$router->dispatch();
