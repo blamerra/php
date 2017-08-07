@@ -6,7 +6,7 @@
   margin: 25px;    
   min-height:250px;
   max-height:250px;
-  padding-top:35px;
+  padding-top:15px;
   position:relative;   
   border:1px solid #E8E8E8;  
   border-top:60px solid #fdfd86;
@@ -53,3 +53,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', end
             /* Internet Explorer */
             filter: progid: DXImageTransform.Microsoft.BasicImage(rotation=1);
         }
+
+  /*-- Added classes */
+
+.container-center {      
+padding: 15em 0em 0em 0em;        
+    display: flex;
+    justify-content: center;
+}

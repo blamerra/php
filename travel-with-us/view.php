@@ -33,9 +33,12 @@ class View
 		}		
 
 
-		function ShowFooter()		
+		function ShowFooter($config)		
 		{
-			$data = array();			
+			$data = array(
+				'home_url' => $config->home_url
+
+			);			
 			echo $this->templateEngine->render("footer.html", $data);		
 		}		
 
@@ -44,14 +47,16 @@ class View
 			$data = array(
 			  'travelId' => $travel->name,				  
 			  'photo_gallery_html'  =>  $this->getTravelPhotoGalleryHTML($travel, $config)
-			);						 
-			
+			);						 			
 			echo $this->templateEngine->render("travel.html", $data);        			
     }		
 
 		function ShowError($msg)		
 		{
-			echo '<div class="postit">'.$msg.'</div>';
+			$data = array(
+			  'msg' => $msg				  			  
+			);						 			
+			echo $this->templateEngine->render("error.html", $data);        					
 		}		
 
 
@@ -81,6 +86,13 @@ class View
 			$output .= '"kind": "flickr",';
       $output .= '"thumbnailWidth": "auto",';
       $output .= '"thumbnailDisplayInterval": 30,';
+      $output .= '"thumbnailAlignment": "center",';   
+      $output .= '"thumbnailL1Label": {';
+      $output .= '"display": true';
+      $output .= '},';            
+      $output .= '"thumbnailLabel": {';
+      $output .= '"display": false';
+      $output .= '},';      
       $output .= '"gallerySorting" : "titleAsc"';
       $output .= '}\'>';
   		$output .= '</div>';
@@ -102,7 +114,7 @@ class View
       $output .= '"display": false';
       $output .= '},';
       $output .= '"thumbnailHoverEffect2": "scale120",';
-      $output .= '"thumbnailAlignment": "justified",';      
+      $output .= '"thumbnailAlignment": "center",';      
       $output .= '"gallerySorting" : "titleAsc"';      
       $output .= '}\'>';
   		$output .= '</div>';
