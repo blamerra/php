@@ -1,6 +1,18 @@
 <?php  
 namespace Models;
 
+class Config
+{
+		public $home_url;
+		public $flickr_user;
+		
+    function __construct() {
+			$this->home_url = "http://localhost/php/travel-with-us/";
+			$this->flickr_user = "151159910@N02";
+    }
+}
+
+
 class Travel
 {
 		public $id;
@@ -25,31 +37,33 @@ class TravelList extends GenericList
     
     function __construct() {
   		$listItems =	array(  			
-  			11 => new Travel('japo', 'Japo', 'asia','2016','08','72157686736328755'),
-  			12 => new Travel('india', 'India', 'asia','2016','08','72157686736328755'),
-  			13 => new Travel('vietnam', 'Vietnam', 'asia','2016','08','72157686736328755'),
-  			14 => new Travel('cambotja', 'Cambotja', 'asia','2016','08','72157686736328755'),
-  			15 => new Travel('tailandia', 'Tailandia', 'asia','2016','08','72157686736328755'),
+  			new Travel('japo', 'Japo', 'asia','2016','08','72157686736328755'),
+  			new Travel('india', 'India', 'asia','2016','08','72157686736328755'),
+  			new Travel('vietnam', 'Vietnam', 'asia','2016','08','72157686736328755'),
+  			new Travel('cambotja', 'Cambotja', 'asia','2016','08','72157686736328755'),
+  			new Travel('tailandia', 'Tailandia', 'asia','2016','08','72157686736328755'),
 
-				20 => new Travel('etiopia', 'Etiopia', 'africa','2016','11','72157686736328755'),
-				21 => new Travel('senegal', 'Senegal', 'africa','2016','11','72157686736328755'),
-				22 => new Travel('sud-africa', 'Sud Africa', 'africa','2016','11','72157686736328755'),				
-				23 => new Travel('botswana', 'Botswana', 'africa','2016','11','72157686736328755'),
-				24 => new Travel('zimbawe', 'Zimbawe', 'africa','2016','11','72157686736328755'),
+				new Travel('etiopia', 'Etiopia', 'africa','2016','11','72157686736328755'),
+				new Travel('senegal', 'Senegal', 'africa','2016','11','72157686736328755'),
+				new Travel('sud-africa', 'Sud Africa', 'africa','2016','11','72157686736328755'),				
+				new Travel('botswana', 'Botswana', 'africa','2016','11','72157686736328755'),
+				new Travel('zimbawe', 'Zimbawe', 'africa','2016','11','72157686736328755'),
 
-				30 => new Travel('barcelona', 'Barcelona', 'europa','2016','11','72157686736328755'),
-				31 => new Travel('paris', 'Paris', 'europa','2016','11','72157686736328755'),
-				32 => new Travel('dublin', 'Dublin', 'europa','2016','11','72157686736328755'),
+				new Travel('barcelona', 'Barcelona', 'europa','2016','11','72157686736328755'),
+				new Travel('paris', 'Paris', 'europa','2016','11','72157686736328755'),
+				'dinamarca' => new Travel('dinamarca', 'Dinamarca', 'europa','2016','11','72157686736328755'),
+				'alemanya' => new Travel('alemanya', 'Alemanya', 'europa','2016','11','72157683990057444'),
 
-  			40 => new Travel('cuba', 'Cuba', 'sud-america','2016','11','72157686736328755'),
-  			41 => new Travel('bolivia', 'Bolivia', 'sud-america','2016','11','72157686736328755'),
-  			42 => new Travel('peru', 'Peru', 'sud-america','2016','11','72157686736328755'),
-  			43 => new Travel('ecuador-illes-galapagos', 'Illes Galapagos', 'sud-america','2016','11','72157686736328755'),
-  			44 => new Travel('brasil', 'Brasil', 'sud-america','2016','11','72157686736328755'),
+  			new Travel('cuba', 'Cuba', 'sud-america','2016','11','72157686736328755'),
+  			new Travel('bolivia', 'Bolivia', 'sud-america','2016','11','72157686736328755'),
+  			new Travel('peru', 'Peru', 'sud-america','2016','11','72157686736328755'),
+  			new Travel('ecuador-illes-galapagos', 'Illes Galapagos', 'sud-america','2016','11','72157686736328755'),
+  			new Travel('brasil', 'Brasil', 'sud-america','2016','11','72157686736328755'),  			
+  			'puerto-rico' => new Travel('puerto-rico', 'Puerto Rico', 'sud-america','2016','11','72157686736328755'),  			
 
-  			50 => new Travel('las-vegas', 'Las Vegas', 'nord-america','2016','11','72157686736328755'),
-  			51 => new Travel('nova-york', 'Nova York', 'nord-america','2016','11','72157686736328755'),
-  			52 => new Travel('washington-dc', 'Washington DC', 'nord-america','2016','11','72157686736328755'),  			
+  			new Travel('las-vegas', 'Las Vegas', 'nord-america','2016','11','72157686736328755'),
+  			new Travel('nova-york', 'Nova York', 'nord-america','2016','11','72157686736328755'),
+  			new Travel('washington-dc', 'Washington DC', 'nord-america','2016','11','72157686736328755'),  			
 			);
 
 			parent::__construct($listItems);
@@ -65,6 +79,23 @@ class TravelList extends GenericList
 			});
 			return $new_array;
 		}
+
+		public function getTravelById2($travel_id){
+			$new_array = array_filter($this->findAll(), function($element) use ($travel_id){
+			  if (isset($element->id) && $element->id == $travel_id) {
+			    return TRUE;
+			  }
+			  return FALSE;
+			});
+
+    	//reset($new_array);
+			if (count($new_array) > 0)	return $new_array[key($new_array)];
+		}
+
+		public function getTravelById($travel_id){			
+			if (isset($this->listItems[$travel_id]->id)) return $this->listItems[$travel_id];
+		}
+
 }
 
 class Continent
@@ -95,7 +126,7 @@ class ContinentList extends GenericList
 
 
 class GenericList {
-	private $listItems;
+	protected $listItems;
   
   public function __construct($listItems) {
   	$this->listItems = $listItems;
@@ -104,6 +135,11 @@ class GenericList {
   public function findAll (){
   	return $this->listItems;
   }
+
+ 	public function getItemById ($id){
+  	if (isset($this->listItems[$id])) return $this->listItems[$id];
+  }
+
 }
 
 
@@ -140,3 +176,4 @@ class SingletonList {
  
 
 ?>
+
